@@ -9,9 +9,9 @@ app.use(express.json())
 
 initializeDatabase()
 
-app.get("/",(req,res)=>{
+/* app.get("/",(req,res)=>{
     res.send("Recipe App")
-})
+}) */
 
 // Create a new recipe 
 
@@ -189,9 +189,9 @@ async function updateRecipe(recipeId,dataToUpdate){
     }
   })
   //  API to delete a recipe with the help of the id 
-async function deleteRecipe(bookId){
+async function deleteRecipe(recipeId){
     try{
-        const deletedRecipe = await Recipe.findByIdAndDelete(bookId)
+        const deletedRecipe = await Recipe.findByIdAndDelete(recipeId)
         return deletedRecipe
     }
     catch(error){
